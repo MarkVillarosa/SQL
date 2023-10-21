@@ -1,3 +1,5 @@
+#This project utilizes the follow Superstore data:
+
 CREATE TABLE superstore (
     item_id INTEGER PRIMARY KEY,
     item_name TEXT,
@@ -26,19 +28,16 @@ VALUES
     (15, 'Cozy Throw Blanket', 'Furnishings', 24.99, 100, 4.2);
 
 
-
+#Use a SELECT statement to order the items by price.
 SELECT*, (Price)
 FROM superstore
 order by price desc;
 
-SELECT SUM(Price), category
-FROM superstore
-group by category
+#Show a statistic about the item prices.
+SELECT avg(price)
+FROM superstore;
 
-SELECT Max(Price), category
-FROM superstore
-group by category;
-
+#Show a statistic about the price for items in the category of "Kitchen Supplies".
 SELECT MAX(price), Category
 from superstore
 where category="Kitchen Supplies"
